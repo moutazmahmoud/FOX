@@ -1,0 +1,912 @@
+/* --------------------General----------------------- */
+:root{
+    --main-color:#ff8015;
+    --blue-color:#3e94e5;
+    --red-color:#b61008;
+    --green-color:#5aeb13;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    position: relative; 
+    z-index: 1;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+p{
+    font-size: 1rem;
+}
+h1{
+font-size: 2.5rem;
+}
+h2{
+font-size: 1.5rem;
+}
+h3{
+    font-size: 1.2rem;
+}
+.btn{
+    display: inline-block;
+    width: 35%;
+    min-width: fit-content;
+    border: 1px solid #643208;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    transition: .4s;
+    cursor: pointer;
+    padding: .5rem .75rem;
+}
+.btn:hover{
+    color: var(--main-color);
+    border-color: #fff;
+}
+.container {
+    width: 71%;
+    max-width: 1110px;
+}
+/* --------------------Header----------------------- */
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header{
+    width: 100%;
+    background:rgba(255, 255, 255, 0.1);
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.logo{
+    position: relative;
+    padding-top: 12.5px;
+    padding-right:17px ;
+    padding-left:0 ;
+    padding-bottom:10px ;
+    margin-right: 3px;
+    --animate-duration: 2s;
+}
+.logo img{
+    width: 100%;
+    cursor: pointer;
+}
+.click-btn{
+    display: none;
+}
+
+.hamburger, .click-btn{
+
+            border-radius: 1em;
+            z-index: 10;
+        }
+        .click-btn{
+            height: 30px;
+            width: 2.5em;
+            border: none;
+            background-color: transparent;
+            right: 20px;
+            border-radius: 0%;
+            position: relative;
+        }
+        
+        .hamburger{
+            height: .25em;
+            width: 90%;
+            background-color: #fff;
+            top:50%;
+            left:0;
+            position: absolute;
+            z-index: 9;
+        }
+        .hamburger::before,
+        .hamburger::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            display: block;
+            float: right;
+            height: 2.5px;
+            width: 100%;
+            border: none;
+            background-color: #fff;
+        }
+        .hamburger::before{top: 6px;}
+        .hamburger::after{bottom: 6px;}
+        .nav-open .hamburger{
+            transform: rotate(.625turn);
+            transition: .35s;
+        }
+        .nav-open .hamburger::before{
+            transform: rotate(90deg) translateX(-6px);
+           
+
+        }
+        .nav-open .hamburger::after{
+            opacity: 0;
+
+        }
+
+header ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 50px;
+}
+header ul li a{
+    margin-left: 15px;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: .8px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: color 400ms;
+}
+header ul li a:hover{
+    color: var(--main-color);
+}
+/* --------------------Main----------------------- */
+.main{
+    width: 100%;
+    margin: 0 auto;
+    height: 80.9vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url(../images/banner2.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 80%; */
+    background-color: #080808;
+    z-index: -1;
+    font-family: calibri;
+}
+.main .container{
+    position: relative;
+    height: 100%;
+}
+#banner{
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;   
+}
+.hello{
+    position: absolute;
+    top: 75%;
+    left: 0;
+    transform: translate(0,-75%);
+}
+.me{
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: fit-content;
+    min-width: 273px;
+    margin: 0 auto;
+}
+.me h1{
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    padding: .5rem 1rem .25rem;
+}
+.me h2{
+    color: var(--main-color);
+    padding: 0;
+    text-transform: uppercase;
+    padding: 0 .5rem .5rem;
+}
+.border1,.border2{
+    position: absolute;
+}
+.border1{
+    top: 0;
+    left: 0;
+}
+.border2{
+    right: 0;
+    bottom: 0;
+}
+.buttons{
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* -------------------------network------------------------- */
+.network{
+    background-image: url(../images/about-bg.jpg);
+    width: 100%;
+    height: 40vh;  
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.network .container{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.network .info{
+    width: 50%;
+}
+.network img{
+    width:30%;
+    margin-bottom:130px;
+    margin-right: 20px;
+}
+.network .info h2{
+    color: #20201f;
+}
+.network .info h1{
+    color: var(--main-color);
+    padding: 10px 0 20px;
+    position: relative;
+}
+.network .info h1::before{
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-color);
+}
+
+.network .info h1::before,.about h1::before{
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 5px;
+    border-radius: 20px;
+}
+.network .info h3{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: #20201f;
+}
+.network .info p{
+    color: #20201f;
+    padding-bottom: 10px;
+}
+
+/* ----------------------------About-------------------- */
+.about{
+    width: 100%;
+    margin: 0 auto;
+    height: 350px;
+    position: relative;
+    background-image: url(../images/about-us-bg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    background-color: #202020;
+    display: flex;
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+}
+.about .container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.about .content{
+    flex-direction: column;
+    justify-content:flex-start;
+    display: flex;
+    width: 500px;
+
+}
+.about h1{
+    position: relative;
+    color: var(--main-color);
+    padding: 10px 0 15px;
+    width: fit-content;
+}
+.about h1::before{
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+}
+.about p{
+    color: #fff;
+    text-size-adjust: 500px;
+    margin-top: 20px;
+    letter-spacing: .7px;
+}
+.about a{
+    margin-top: 20px;
+}
+/* ---------------------Section-------------------- */
+section{
+    width: 100%;
+    position: relative;
+    background-color: #202020;
+    display: flex;
+    justify-content: center;
+}
+.weekend{
+    width: 100%;
+    display: flex;
+    height: 38vh;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+}
+.weekend img{
+    width: 70%;
+    display: inline-block;
+    position: relative;
+}
+.weekend .girls{
+    width: 110%;
+    height: 100%;
+    background-image: url(../images/gym-girls.jpg);
+    background-repeat: no-repeat;
+    background-size:100% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.girls p{
+    padding: 2rem ;
+    text-align: center;
+}
+.coatch{
+    margin-top: 55px;
+    background-image: url(../images/gym2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 85% auto;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    min-height: 700px;
+    position: relative;
+    width: 100%;
+}
+.border-20{
+    background: var(--main-color);
+    color: #000;
+    width: 100%;
+    height: 7px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.border-20::before{
+    content: '';
+    background:#000;
+    width: 99%;
+    height: .5px;
+    color: #000;
+}
+hr{
+    border-color: transparent;
+    border-width: .5px;
+}
+.g1{
+    top: 0;
+}
+.g2{
+    bottom: 0;
+}
+.coatch .trs{
+    position: relative;
+    width: 30%;
+    text-align: center;
+    margin-top: 22px;
+}
+.coatch .trs h2{
+    color: #fff;
+    padding: 10px 20px;
+}
+.coatch .trs img:nth-of-type(1){
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.coatch .trs img:nth-of-type(2){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.trainers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+.trainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    width: 40%;
+}
+.trainer img{
+    object-fit: cover;
+    width: 50%;
+    height: min-content;
+    border-radius: 100%;
+}
+.trs-about{
+    text-align: center;
+    background-color: thistle;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+}
+.trs-about h2{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.trs-about p{
+    line-height: 27px;
+    padding-bottom: 20px;
+
+}
+.pointer{
+    border:solid 40px transparent;
+    border-bottom-color:thistle;
+    position:absolute;
+    left: 50%;
+    top: -9%;
+    transform: translate(-50%,-50%);
+}
+/* -----------------------------grid - Section------------------------------ */
+.grid-flex{
+    width: 100%;
+    margin: 50px 0 90px 0;
+    position: relative;
+}
+.pokemon{
+    background: var(--main-color);
+    padding: 20px;
+}
+.pokemon h3{
+    color: #fff;
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+.pokemon p{
+    padding:0 ;
+    font-weight: 700;
+}
+.fit-img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.first{
+    background-image:url(../images/g1.jpg) ;
+}
+.second{
+    background-image:url(../images/g2.jpg) ;
+}
+.third{
+    background-image:url(../images/g3.jpg) ;
+}
+/* -------------------------Footer--------------------- */
+.footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    background: #000;
+}
+.footer .g1{
+    z-index: 2;
+}
+.footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: #000;
+    color: #fff;
+    position: relative;
+}
+.left{
+    width: 26%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-right: 25px;
+    background: #000;
+    flex-direction: column;
+    height: 100%;
+}
+.left img{
+    width: 50%;
+}
+.left span{
+    color: var(--main-color);
+}
+form{
+    width: 100%;
+}
+.form{
+    background: #fff !important;
+    color: #000;
+    width: 50%;
+    justify-content:flex-start;
+    align-items: center;
+    text-align: center;
+    height: 106%;
+    z-index: 2;
+}
+.form .inputs{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    padding: 0 40px;
+    width: 100%;
+    position: relative;
+}
+.form h2{
+    color: var(--main-color);
+    padding: 40px 20px;   
+}
+.form input{
+    border: none;
+    border-bottom:2px solid #000 ;
+    display: inline-block !important;
+    padding-bottom: 5px;
+    margin-bottom: 60px;
+    outline: none;
+    color: #000;
+    font-weight: 400;
+    font-size: 1.4rem;
+    font-family: calibri;
+    cursor: text;
+}
+.form .name-email{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form input::placeholder{
+    color: rgb(65, 65, 65);
+    font-weight: 400;
+    font-size: 1.2rem;
+    outline: none;
+    letter-spacing: .8px;
+}
+
+.name-email .name{
+    width: 48%;
+}
+.name-email .email{
+    width: 48%;
+}
+.address{
+    width: 100%;
+}
+.form .messages{
+    width: 100%;
+    margin-bottom: 40px;
+}
+.form .btn{
+    background: #fff;
+    width: 140px;
+    height: 40px;
+    font-size: 1.2rem;
+    padding: 5px;
+    border: none;
+    color:#000;
+    border: 2px solid var(--main-color);
+    font-weight: 500;
+    letter-spacing: .7px;
+    font-family: calibri;
+    box-shadow: -4px 2px 12px 1px rgba(46 ,46 ,46 , 0.2);
+    margin-bottom: 20px;
+}
+.form .btn:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+.right{
+    width: 26%;
+    padding: 90px 30px 0;
+    background: #000;
+    height: 100%;
+}
+.right h3{
+    margin-bottom: 10px;
+}
+.right p{
+    margin-bottom: 25px;
+}
+.right ul{
+    width: 100%;
+}
+.right ul li{
+    display: inline-block;
+    background-color: blanchedalmond;
+    width: 23%;
+    text-align: center;
+    position: relative;
+}
+.fab{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.fab:hover{
+    font-size: 1.7rem;
+}
+.fa-facebook:hover{
+    color: #3b5998;    
+}
+.fa-behance:hover{
+    color: #1769ff;
+}
+.fa-linkedin-in:hover{
+    color: #0077b5;
+}
+.fa-twitter:hover{
+    color: #1da1f2;
+}
+#myBtn {
+    display: inline-block; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+  .mrg10{
+    margin-top: 10px;
+  }
+
+  /* ------------------------------ Media Queries ------------------------ */
+
+@media screen and (min-width:0px) and (max-width:768px) {
+    :root{
+        font-size: 12px;
+    }
+    .grid-flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .grid-flex *{
+        width: 100%;
+    }
+    .grid-flex .fit-img{
+        width: 100%;
+        height: 90vh;
+        margin: 20px auto;
+    }
+    .container {
+        width: 100%;
+      }
+      .click-btn{
+          display: inline-block;
+      }
+      header ul{
+          display: none;
+      }
+      .trainers{
+          flex-direction: column;
+      }
+      .coatch{
+          background-size: 100% auto;
+      }
+      .trainer{
+          width: 80%;
+      }
+      .trainer:nth-of-type(1){
+          margin-bottom: 590px;
+      }
+      .trs{
+          min-width: 60%;
+      }
+      .trs-about{
+          width: 100%;
+      }
+      .network{
+        height: fit-content;
+          flex-direction: column;
+      }
+      .network .container{
+          flex-direction: column;
+          margin: 15px 0;
+      }   
+    
+      .network img{
+          min-width:60%;
+          margin: 10px;
+      }
+      .network .info{
+        width: 80%;
+    }
+   
+}
+@media screen and (min-width:769px) and (max-width:1200px){
+    .hello{
+        width: 45%;
+    }
+}
+@media screen and (min-width:769px){
+    .grid-flex{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(5,1fr);
+        grid-row-gap: 20px;
+        grid-column-gap: 30px;
+    }
+    .pokemon:nth-of-type(1){
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .pokemon:nth-of-type(2){
+        grid-column: 2/3;
+        grid-row: 5/6;
+    }
+    .pokemon:nth-of-type(3){
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+    .first{
+        grid-column: 1/2;
+        grid-row: 2/6;
+    }
+    .second{
+        grid-column: 2/3;
+        grid-row: 1/5;
+    }
+    .third{
+        grid-column: 3/4;
+        grid-row: 2/6;
+    }
+    .pokemon{
+        width: 100%;
+        height: 100%;
+    }
+    .fit-img{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (min-width:769px) and (max-width:1000px){
+    .container{
+        width: 85%;
+    }
+    :root{
+        font-size: 14px;
+    }
+}
+@media screen and (min-width:1201px) and (max-width:1350px){
+    .container{
+        width: 80%;
+    }
+}
+@media screen and (min-width:1351px){
+    .container{
+        width: 72%;
+    }
+}
+@media screen and (max-width:1001px){
+    .container{
+        width: 100%;
+    }
+    .hello{
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%,-95%);
+    }
+    .footer .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    .left{
+        width: 90%;
+        margin-bottom: 25px;
+    }
+    .left *{
+        margin: 20px auto;
+    }
+    .left img{
+        width: 150px;
+    }
+    .form{
+        width: 90%;
+    }
+    .right{
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: -40px;
+    }
+    .weekend{
+        height: fit-content;
+        position: relative;
+        align-items: center;
+        flex-direction: column;
+    }
+    .weekend img{
+        width: 100%;
+    }
+    .weekend .girls{
+        width: 100%;
+        height: 30vh;
+        background-size:100% auto;
+    }
+    .about{
+        background-size: 100% auto;
+    }
+}
+@media screen and (max-width:370px){
+    .girls{
+        height: 25vh !important;
+    }    
+    .girls p{
+        padding: 10px;
+    }
+    
+}
+
